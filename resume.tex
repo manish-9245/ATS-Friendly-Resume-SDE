@@ -1,0 +1,156 @@
+\thispagestyle{empty}
+\documentclass[a4paper,10.85pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage[left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\raggedright
+
+% Custom commands and formatting for resume
+\newcommand{\area} [2] {
+    \vspace*{-9pt}
+    \begin{verse}
+        \textbf{#1}   #2
+    \end{verse}
+}
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\newcommand{\employer} [3] {
+    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
+}
+
+\newcommand{\contact} [3] {
+    \vspace*{-10pt}
+    \begin{center}
+        {\Huge \scshape {#1}}\\
+        #2 \\ #3
+    \end{center}
+    \vspace*{-8pt}
+}
+
+\newenvironment{achievements}{
+    \begin{list}
+        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
+    \end{list}
+}
+
+\newcommand{\schoolwithcourses} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+    \vspace*{5pt}
+}
+
+\newcommand{\school} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+}
+
+\begin{document}
+\vspace*{-30pt}
+
+% Profile section
+\begin{center}
+{\Huge \scshape \textbf {John Doe}}\\
+\vspace*{1pt}
+~ \href{mailto:johndoe@example.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{johndoe@example.com}} ~ 
+\href{https://www.linkedin.com/in/johndoe/}{\raisebox{-0.2\height}\faLinkedin\ \underline{johndoe}}  ~
+\href{https://github.com/johndoe}{\raisebox{-0.2\height}\faGithub\ \underline{johndoe}} ~ 
+\href{https://portfolio.johndoe.com}{\raisebox{-0.2\height}\faGlobe\ \underline{Portfolio}}  ~
+\href{https://leetcode.com/johndoe/}{\raisebox{-0.2\height}{\includegraphics[scale=0.45]{images/leetcode.png}} \underline{johndoe}}
+\vspace{-5pt}
+\end{center}
+
+% Education section
+\header{Education}
+\vspace{2mm}
+\textbf{XYZ University}\hfill New York, USA\\
+Bachelors in Computer Science \hfill August 2019 - May 2023\\
+{\sl CGPA: 9.0/10.00}\\
+\vspace{1.5mm}
+
+% Experience section
+\header{Experience}
+\vspace{2mm}
+
+\textbf{ABC Tech Solutions}\textbf{ | Software Engineer} \hfill  June 2023 - Present\\
+\vspace{1mm}
+\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=0pt]
+\item  Revamped UI using modern design patterns, \textbf{increased user engagement by 40\% and improved accessibility features by 25\%}.
+\item  Developed 5 end-to-end features that \textbf{reduced operational overhead by 60\%}, saving an estimated 100+ hours per month.
+\item  \textbf{Architected AWS-based solution} to automate data processing pipeline, \textbf{reducing time spent on data processing by 50\%}.
+\item  \textbf{Designed and implemented cloud storage solution}, improving system uptime by 99.9\% through proactive monitoring and redundancy.
+\end{itemize}
+\vspace{1mm}
+\textbf{XYZ Software Inc.}\textbf{ | Software Engineering Intern} \hfill  May 2022 - August 2022\\
+\vspace{1mm}
+\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=0pt]
+\item  Developed proof of concept for a \textbf{real-time collaborative tool}, \textbf{improving team productivity by 15\%}.
+\item  Designed prototypes for a new \textbf{mobile app UI}, which \textbf{enhanced usability by 30\%} and ensured scalability for future features.
+\end{itemize}
+\vspace{1mm}
+\textbf{XYZ Tech Corp.}\textbf{ | Software Development Intern} \hfill  June 2021 - August 2021\\
+\vspace{1mm}
+\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=0pt]
+\item  \textbf{Developed 3 pages for a mobile app} with internationalization, making it accessible to users in different regions.
+\item  Created a custom \textbf{navigation feature}, resulting in a \textbf{20\% reduction in app load times}.
+\end{itemize}
+\vspace{1.5mm}
+
+% Projects section
+\header{Projects}
+\vspace{2mm}
+{\textbf{CodeMaster}}\textbf{ | \href{https://github.com/johndoe/codemaster}{Link}}\hfill{\sl Node.js, React, WebSocket}\\
+\vspace{1mm}
+\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=0pt]
+\item  \textbf{Real-time collaborative code editor} supporting multiple users editing the same document simultaneously.
+\item  Integrated features like \textbf{syntax highlighting} and \textbf{real-time code formatting}.
+\end{itemize}
+\vspace{1mm}
+{\textbf{DataVisuals}}\textbf{ | \href{https://datavisuals.johndoe.com}{Link}}\hfill{\sl Python, Flask, JavaScript, Bootstrap}\\
+\vspace{1mm}
+\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=0pt]
+\item  Built a \textbf{data visualization tool} for presenting complex datasets in an interactive and intuitive way.
+\item  Integrated with real-time data sources to \textbf{automatically update graphs and charts}.
+\end{itemize}
+\vspace{2mm}
+
+% Honors and Awards section
+\header{Honors \& Awards}
+\vspace{1.5mm}
+\begin{itemize}[leftmargin=*, itemsep=-1pt, topsep=0pt]
+\item \textbf{Team Lead}, Hackathon Winner at TechX, developing an award-winning web app for social good.
+\item \textbf{Runner-up} in CodeJam, an internal coding competition at XYZ University.
+\item \textbf{Top 5 Finalist} in Global Web Development Challenge, competing with 300+ teams worldwide.
+\item \textbf{First Place} in National Coding Olympiad.
+\end{itemize}
+\vspace{2mm}
+
+% Skills section
+\header{Technical Skills}
+\vspace{0mm}
+\begin{longtable}{@{}l@{\hspace{1cm}}p{12cm}@{}}
+Programming Languages & Python, JavaScript, C++, HTML, CSS \\
+Libraries/Frameworks & React, Node.js, Flask, Express, Bootstrap \\
+Tools / Platforms & Git, Docker, Jenkins, AWS, Visual Studio Code \\
+Databases & MongoDB, PostgreSQL, SQLite \\
+Certifications & \href{https://www.credly.com/badges/example}{AWS Developer Associate}, \href{https://www.credly.com/badges/example}{Google Cloud Certified}
+\end{longtable}
+\end{document}
