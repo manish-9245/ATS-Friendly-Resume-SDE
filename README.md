@@ -1,102 +1,101 @@
-# ATS Friendly Resume for SDE
-Probably the best single page ATS Friendly resume for Software Engineers
-A clean and professional LaTeX resume template with modern features including FontAwesome icons, hyperlinks, and custom spacing.
+# LaTeX Resume Template Documentation
 
-## Features
+## Overview
+This LaTeX resume template is a highly customizable, professional-grade document designed for creating a clean, modern resume with multiple sections and advanced typesetting features.
 
-- Clean and professional layout
-- Custom spacing and formatting commands
-- Integration with FontAwesome 5 icons
-- Hyperlinked contact information
-- Support for custom images (e.g., LeetCode logo)
-- Sections for Education, Experience, Projects, Honors & Awards, and Technical Skills
-- Customizable bullet points with reduced spacing
-- Mobile-friendly A4 paper size
+## Template Structure
 
-## Prerequisites
-
-The template requires the following LaTeX packages:
-- fullpage
-- amsmath
-- amssymb
-- textcomp
-- inputenc
-- fontenc
-- hyperref
-- geometry
-- longtable
-- enumitem
-- fontawesome5
-- graphicx
-
-## File Structure
-
-```
-resume/
-├── resume.tex
-├── images/
-│   └── leetcode.png
-└── README.md
-```
-
-## Usage
-
-1. Ensure you have a LaTeX distribution installed (e.g., TeX Live, MiKTeX)
-2. Place your custom images in the `images/` directory
-3. Modify the resume.tex file with your information
-4. Compile using your preferred LaTeX compiler:
-   ```bash
-   pdflatex resume.tex
-   ```
-
-## Customization
-
-### Profile Section
-```latex
-\begin{center}
-{\Huge \scshape \textbf {Your Name}}
-% Add your contact links here
-\end{center}
-```
+### Packages and Configuration
+- Uses `article` document class with A4 paper and 10pt font
+- Implements full-page layout with `fullpage` package
+- Configures UTF-8 input encoding
+- Disables page numbering
+- Configures minimal margins using `geometry` package
+- Uses `roboto` font with a default Roman font family
 
 ### Custom Commands
+The template defines several custom commands to streamline resume section creation:
 
-- `\area{title}{content}`: Creates a new section with custom spacing
-- `\lineunder`: Adds an underline separator
-- `\header{title}`: Creates a section header
-- `\employer{company}{date}{position}`: Formats employer information
-- `\contact{name}{info1}{info2}`: Formats contact information
-- `\schoolwithcourses{school}{date}{location}{courses}`: Formats education information with courses
-- `\school{school}{date}{location}{details}`: Formats education information
+#### `\name{}`
+- Creates a large, small-caps, bold name header
+- Centered at the top of the document
 
-## Icon Support
+#### `\contacts{}`
+- Generates contact links with corresponding icons
+- Supports multiple contact methods (email, LinkedIn, GitHub, etc.)
+- Uses FontAwesome icons for visual representation
 
-The template includes FontAwesome 5 icons for:
-- Email (`\faEnvelope`)
-- LinkedIn (`\faLinkedin`)
-- GitHub (`\faGithub`)
-- Website (`\faGlobe`)
-- Custom icons (via images)
+#### `\header{}`
+- Creates section headers with an underline
+- Applies consistent formatting across sections
 
-## Page Layout
+#### `\education{}`
+- Formats education section with institution, location, dates, and CGPA
+- Allows flexible input for academic details
 
-- Paper size: A4
-- Margins: 1.5cm on all sides
-- Font size: 10.85pt
-- Single column layout
+#### `\employer{}`
+- Formats work experience entries
+- Supports company name, role, duration, and bullet-point descriptions
+- Configures custom list formatting for experience items
 
-## Tips for Best Results
+#### `\project{}`
+- Designs project sections with title, link, and description
+- Enables hyperlinked project references
 
-1. Keep bullet points concise and achievement-focused
-2. Use consistent spacing between sections
-3. Highlight key achievements and metrics in bold
-4. Ensure all hyperlinks are working properly
-5. Maintain consistent date formatting throughout
+#### `\techstack{}`
+- Creates a tabular format for listing technical skills
+- Provides clean, organized skill representation
 
-## License
+### Sections Covered
+1. Profile/Contact Information
+2. Education
+3. Work Experience
+4. Projects
+5. Honors & Awards
+6. Technical Skills
+7. Certifications
 
-This template is available under the MIT License. Feel free to modify and distribute as needed.
+## Best Practices Implemented
 
-## Contributing
+### Typographic Excellence
+- Uses `raggedright` for clean text alignment
+- Configures custom line spacing
+- Implements consistent font styling
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+### Modularity
+- Separates content into distinct, reusable commands
+- Allows easy customization and section rearrangement
+
+### Accessibility
+- Uses `hyperref` package for clickable links
+- Includes icons for visual enhancement
+- Supports internationalization
+
+### Responsive Design
+- Configurable margins
+- Adaptable to different content lengths
+
+## Recommended Usage
+
+### Customization Tips
+- Modify `\geometry` parameters to adjust margins
+- Replace placeholder text with personal information
+- Adjust skill categories in the technical skills section
+- Customize icon and link configurations
+
+### Compilation
+Compile using `pdflatex` with the following packages:
+- `fullpage`
+- `inputenc`
+- `fontenc`
+- `hyperref`
+- `geometry`
+- `enumitem`
+- `fontawesome5`
+- `graphicx`
+- `roboto`
+
+## Prerequisites
+- TeX distribution (e.g., TeX Live, MiKTeX)
+- FontAwesome5 font
+- Roboto font family
