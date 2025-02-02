@@ -24,7 +24,7 @@ Ensure you have the following installed:
    ```
 2. Open `resume.tex` in your LaTeX editor.
 3. Compile using `pdflatex` or an equivalent tool.
-4. The generated `ATS-Friendly-Resume-SDE.pdf` will be ready to use. You can see a sample [here](ATS-Friendly-Resume-SDE.pdf).
+4. The generated `ATS-Friendly-Resume-SDE.pdf` will be ready to use. You can see a sample [here](Software_Engineer_Resume_Template_High_ATS_Score.pdf).
 
 ## Usage
 ### Editing Personal Information
