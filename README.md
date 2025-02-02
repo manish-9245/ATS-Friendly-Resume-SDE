@@ -1,4 +1,4 @@
-# Resume LaTeX Template
+# Software Engineer Resume Template with High ATS Score
 
 ## Overview
 This repository contains a LaTeX template for creating a professional resume with a clean, modular, and structured design. The template is optimized for readability and ATS (Applicant Tracking System) compatibility.
@@ -24,7 +24,7 @@ Ensure you have the following installed:
    ```
 2. Open `resume.tex` in your LaTeX editor.
 3. Compile using `pdflatex` or an equivalent tool.
-4. The generated `ATS-Friendly-Resume-SDE.pdf` will be ready to use.
+4. The generated `ATS-Friendly-Resume-SDE.pdf` will be ready to use. You can see a sample [here](ATS-Friendly-Resume-SDE.pdf).
 
 ## Usage
 ### Editing Personal Information
