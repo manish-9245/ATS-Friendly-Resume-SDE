@@ -1,27 +1,25 @@
-\thispagestyle{empty}
-\documentclass[a4paper,10.85pt]{article}
+% Resume LaTeX Template
+% Author: Manish Tiwari
+% Last Updated: 2025
+% Purpose: Professional resume template with modular design and clean typography
+
+\documentclass[a4paper,10pt]{article}
+
 \usepackage{fullpage}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{textcomp}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[hidelinks]{hyperref}
-\usepackage[left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm]{geometry}
-\usepackage{longtable}
+\usepackage[left=1cm, right=0.7cm, top=1cm, bottom=1cm]{geometry}
 \usepackage{enumitem}
 \usepackage{fontawesome5}
 \usepackage{graphicx}
-\graphicspath{ {./images/} }
-\raggedright
+\usepackage{roboto}
 
-% Custom commands and formatting for resume
-\newcommand{\area} [2] {
-    \vspace*{-9pt}
-    \begin{verse}
-        \textbf{#1}   #2
-    \end{verse}
-}
+\pagenumbering{gobble}
+\renewcommand{\familydefault}{\rmdefault}
+\graphicspath{{./images/}}
+\raggedright
+\renewcommand{\baselinestretch}{1}
 
 \newcommand{\lineunder} {
     \vspace*{-8pt} \\
@@ -29,38 +27,50 @@
 }
 
 \newcommand{\header} [1] {
-    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \hspace*{-18pt}\vspace*{6pt} \textsc{#1}
     \vspace*{-6pt} \lineunder
+    \vspace{1mm}
 }
 
-\newcommand{\employer} [3] {
-    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
+\newcommand{\contacts}[3]{
+~ \href{#1}{\raisebox{-0.2\height}{\fontsize{11}{2}\selectfont {#2} \underline{\strut{#3}}}} ~
 }
 
-\newcommand{\contact} [3] {
-    \vspace*{-10pt}
-    \begin{center}
-        {\Huge \scshape {#1}}\\
-        #2 \\ #3
-    \end{center}
-    \vspace*{-8pt}
+\newcommand{\name}[1]{
+{\Huge \scshape \textbf{#1}}\\
+\vspace*{1pt}
 }
 
-\newenvironment{achievements}{
-    \begin{list}
-        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
-    \end{list}
+\newcommand{\employer}[5]{
+    \textbf{#1}\textbf{ | #2} \hfill  {#3} - {#4}\\
+    \vspace{1mm}
+    \begin{itemize}[leftmargin=0.7cm, itemsep=-2pt, topsep=0pt]{#5}\end{itemize}
 }
 
-\newcommand{\schoolwithcourses} [4] {
-    \textbf{#1} #2 $\bullet$ #3\\
-    #4 \\
-    \vspace*{5pt}
+\newcommand{\education}[6]{
+    \textbf{#1}\hfill {#2}\\
+    {#3} \hfill {#4} - {#5}\\
+    {\sl CGPA: {#6}}\\
 }
 
-\newcommand{\school} [4] {
-    \textbf{#1} #2 $\bullet$ #3\\
-    #4 \\
+\newcommand{\project}[4]{
+    {\textbf{#1}}\textbf{ | \href{#2}{\underline{Link \faLink}}}\hfill{ #3}\\
+    \vspace{1mm}
+    \begin{itemize}[leftmargin=0.7cm, itemsep=0pt, topsep=0pt]
+    {#4}
+    \end{itemize}
+}
+
+\newcommand{\techstack}[2]{
+    \textbf{#1} & {#2} \\
+}
+
+\newcommand{\certification}[3]{
+    \item \underline{\textbf{\href{#1}{#2 \faLink}}} - {#3}
+}
+
+\newcommand{\newsection}[1]{
+    #1
 }
 
 \begin{document}
@@ -68,89 +78,81 @@
 
 % Profile section
 \begin{center}
-{\Huge \scshape \textbf {John Doe}}\\
-\vspace*{1pt}
-~ \href{mailto:johndoe@example.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{johndoe@example.com}} ~ 
-\href{https://www.linkedin.com/in/manishtiwari13/}{\raisebox{-0.2\height}\faLinkedin\ \underline{johndoe}}  ~
-\href{https://github.com/manish-9245}{\raisebox{-0.2\height}\faGithub\ \underline{johndoe}} ~ 
-\href{https://portfolio.johndoe.com}{\raisebox{-0.2\height}\faGlobe\ \underline{Portfolio}}  ~
-\href{https://leetcode.com/johndoe/}{\raisebox{-0.2\height}{\includegraphics[scale=0.45]{images/leetcode.png}} \underline{johndoe}}
+\name{Manish Tiwari}
+\begin{center}
+\contacts{mailto:byte.codes@gmail.com}{\faEnvelope}{byte.codes@gmail.com} 
+\contacts{https://www.linkedin.com/in/manishtiwari13/}{\faLinkedin}{linkedin.com/in/manishtiwari13} 
+\contacts{https://github.com/manish-9245}{\faGithub}{github.com/manish-9245} 
+\contacts{https://bytecoder.vercel.app/}{\faGlobe}{Portfolio} 
+\contacts{https://leetcode.com/u/bytecruncher/}{\includegraphics[scale=0.45]{images/leetcode.png}}{leetcode.com/bytecruncher}
+\contacts{tel:+18885555555}{\faPhone}{+1 888-555-5555}
+\contacts{}{\faMapMarker}{Silicon Valley, California}
 \vspace{-5pt}
+\end{center}
 \end{center}
 
 % Education section
 \header{Education}
-\vspace{2mm}
-\textbf{XYZ University}\hfill New York, USA\\
-Bachelors in Computer Science \hfill August 2019 - May 2023\\
-{\sl CGPA: 9.0/10.00}\\
-\vspace{1.5mm}
+\education{Binary State University}{Silicon Valley}{Bachelor's in Code Compilation Engineering}{August 2019}{July 2023}{8.42/10.00}
 
 % Experience section
 \header{Experience}
-\vspace{2mm}
+\employer{ByteCraft Technologies}{Software Wizard-1}{August 2023}{Present}
+{
+\item Revolutionized the binary dashboard UI, \textbf{reducing mouse clicks by 35\%, expanding pixel real estate by 20\%, and debugging all rogue CSS}
+\item Engineered 5 end-to-end reliability features, \textbf{slashing bug response time by 85\%} and saving the debug team over 100 coffee breaks per month
+\item \textbf{Crafted a cloud-powered alternative} to the ancient file portal, \textbf{turbocharging file processing by 40\% and fortifying system stability} for 2-3 million digital artifacts
+\item \textbf{Architected central data vault service} on cloud, \textbf{turbocharged data fetching by 60\%} for over 5 apps that previously played phone tag with other services
+\item \textbf{Spearheaded BitVision} an AI service that decodes transformation patterns, born from a caffeine-fueled Hackathon, gained cult following and is now preparing for its grand debut
+\item \textbf{Reimagined Data Squeezer using cloud magic}, achieving \textbf{50\% smaller digital footprint and 95\% less server napping time}
+\item \textbf{Robot-ified 10+ manual report deliveries} using AutoMagic, eliminating human-induced delays
+}
 
-\textbf{ABC Tech Solutions}\textbf{ | Software Engineer} \hfill  June 2023 - Present\\
-\vspace{1mm}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=0pt]
-\item  Revamped UI using modern design patterns, \textbf{increased user engagement by 40\% and improved accessibility features by 25\%}.
-\item  Developed 5 end-to-end features that \textbf{reduced operational overhead by 60\%}, saving an estimated 100+ hours per month.
-\item  \textbf{Architected AWS-based solution} to automate data processing pipeline, \textbf{reducing time spent on data processing by 50\%}.
-\item  \textbf{Designed and implemented cloud storage solution}, improving system uptime by 99.9\% through proactive monitoring and redundancy.
-\end{itemize}
-\vspace{1mm}
-\textbf{XYZ Software Inc.}\textbf{ | Software Engineering Intern} \hfill  May 2022 - August 2022\\
-\vspace{1mm}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=0pt]
-\item  Developed proof of concept for a \textbf{real-time collaborative tool}, \textbf{improving team productivity by 15\%}.
-\item  Designed prototypes for a new \textbf{mobile app UI}, which \textbf{enhanced usability by 30\%} and ensured scalability for future features.
-\end{itemize}
-\vspace{1mm}
-\textbf{XYZ Tech Corp.}\textbf{ | Software Development Intern} \hfill  June 2021 - August 2021\\
-\vspace{1mm}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=0pt]
-\item  \textbf{Developed 3 pages for a mobile app} with internationalization, making it accessible to users in different regions.
-\item  Created a custom \textbf{navigation feature}, resulting in a \textbf{20\% reduction in app load times}.
-\end{itemize}
-\vspace{1.5mm}
+\employer{ByteCraft Technologies}{Code Apprentice}{February 2023}{July 2023}{
+\item Conjured proof of concept for a \textbf{database juggling app} that can dance with multiple databases simultaneously while drawing pretty graphs, \textbf{reducing manual keyboard mashing by 15\%}
+\item Sketched UI blueprints for legacy app metamorphosis, \textbf{boosting click efficiency by 35\%} and future-proofing screen real estate
+}
+
+\employer{ByteCraft Technologies}{Code Padawan}{June 2022}{July 2022}{
+\item \textbf{Crafted 2 pages with babel-fish translation} for ByteCraft.com, using homegrown pixel-pushing framework
+\item Designed fancy navigation for micro-frontends with quantum routing, \textbf{reducing page lag by 30\%}
+}
 
 % Projects section
 \header{Projects}
-\vspace{2mm}
-{\textbf{CodeMaster}}\textbf{ | \href{https://github.com/johndoe/codemaster}{Link}}\hfill{\sl Node.js, React, WebSocket}\\
-\vspace{1mm}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=0pt]
-\item  \textbf{Real-time collaborative code editor} supporting multiple users editing the same document simultaneously.
-\item  Integrated features like \textbf{syntax highlighting} and \textbf{real-time code formatting}.
-\end{itemize}
-\vspace{1mm}
-{\textbf{DataVisuals}}\textbf{ | \href{https://datavisuals.johndoe.com}{Link}}\hfill{\sl Python, Flask, JavaScript, Bootstrap}\\
-\vspace{1mm}
-\begin{itemize}[leftmargin=*, itemsep=-2pt, topsep=0pt]
-\item  Built a \textbf{data visualization tool} for presenting complex datasets in an interactive and intuitive way.
-\item  Integrated with real-time data sources to \textbf{automatically update graphs and charts}.
-\end{itemize}
-\vspace{2mm}
+\project{BitBuddy}{https://github.com/byte-master/bitbuddy}{NodeJS, ReactJS, Socket IO, PixelPerfect}{
+\item \textbf{Conjured real-time collaborative code magic}, enabling synchronized keyboard orchestra and efficient multi-wizard coding sessions
+\item \textbf{Polished user experience} with instant updates and smart features like \textbf{self-closing portals and brackets}
+}
 
 % Honors and Awards section
 \header{Honors \& Awards}
-\vspace{1.5mm}
 \begin{itemize}[leftmargin=*, itemsep=-1pt, topsep=0pt]
-\item \textbf{Team Lead}, Hackathon Winner at TechX, developing an award-winning web app for social good.
-\item \textbf{Runner-up} in CodeJam, an internal coding competition at XYZ University.
-\item \textbf{Top 5 Finalist} in Global Web Development Challenge, competing with 300+ teams worldwide.
-\item \textbf{First Place} in National Coding Olympiad.
+\item \textbf{Code Council Leader}, orchestrating events for 2000+ keyboard warriors at ByteCraft
+\item \textbf{Silver Medal} in CryptoMania Hackathon, among \textbf{400+ teams}
+\item \textbf{Universal runner-up} at CodeCraft Global Hackathon with 1000+ teams from 20 realms
+\item \textbf{Knighted} by ByteCraft Archmage for exceptional spells in system stability
+\item \textbf{Grand Champion} of DigiCrop Hackathon, Ministry of Digital Agriculture
+\item \textbf{Architected MVP} for BitChain, valued at \$400,000 in Seed round
+\item \textbf{Supreme victor} at CodeQuest Hackathon, hosted by Binary Wizards Club
+\item \textbf{Regional champion} at TechTrivia Tournament, among 10k+ knowledge seekers
 \end{itemize}
-\vspace{2mm}
 
 % Skills section
 \header{Technical Skills}
-\vspace{0mm}
-\begin{longtable}{@{}l@{\hspace{1cm}}p{12cm}@{}}
-Programming Languages & Python, JavaScript, C++, HTML, CSS \\
-Libraries/Frameworks & React, Node.js, Flask, Express, Bootstrap \\
-Tools / Platforms & Git, Docker, Jenkins, AWS, Visual Studio Code \\
-Databases & MongoDB, PostgreSQL, SQLite \\
-Certifications & \href{https://www.credly.com/badges/example}{AWS Developer Associate}, \href{https://www.credly.com/badges/example}{Google Cloud Certified}
-\end{longtable}
+\begin{tabular}{p{4.8cm}p{15cm}}
+\techstack{Spell Languages}{C++, Python, Java, JavaScript, HTML, CSS}
+\techstack{Magical Tools}{React, SpringBoot, Next JS, Redux, JUnit, Jest}
+\techstack{Artifacts}{Git, BitBucket, Terraform, Cloud Magic, Figma}
+\techstack{Knowledge Vaults}{MongoDB, Supabase, MySQL, Crystal DB}
+\end{tabular}
+
+% Certifications section
+\header{Certifications}
+\begin{itemize}[leftmargin=*, itemsep=-1pt, topsep=0pt]
+\certification{https://www.credly.com/badges/cloud-wizard}{Cloud Architect - Supreme}{Issued by Cloud Wizardry Council}
+\certification{https://www.credly.com/badges/infrastructure-sage}{Infrastructure Sage: CloudForm Master}{Issued by CloudCraft}
+\certification{https://verify.skilljar.com/digital-master}{Digital Resources Master}{Issued by Binary Foundation}
+\end{itemize}
+
 \end{document}
